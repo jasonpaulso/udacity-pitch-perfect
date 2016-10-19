@@ -31,8 +31,6 @@ class PlaySoundsViewController: UIViewController {
     
     
     @IBAction func playSoundForButton(_ sender: UIButton) {
-        print("Play Sound Button Pressed")
-        print(sender.tag)
         stopButton.isEnabled = true
         switch(ButtonType(rawValue: sender.tag)!) {
         case .Slow:
