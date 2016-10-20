@@ -21,16 +21,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    let imageStop = UIImage(named:"stopRecordingButton")
-//    let imagePlay = UIImage(named: "recordButton")
+    let imageStop = UIImage(named:"stopRecordingButton")
+    let imagePlay = UIImage(named: "recordButton")
     
-    @IBAction func recordAudio(_ sender: AnyObject) {
-        print("Recording Started")
-        recordingLabel.text = "Tap to stop recoding and perfect your pitch!"
-        stopRecordingButton.isEnabled = true
-        recordButton.isHidden = true
-        stopRecordingButton.isHidden = false
-        recordButton.isEnabled = false
+    func record() {
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
@@ -48,14 +42,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     }
     
-    @IBAction func stopRecording(_ sender: AnyObject) {
-        print("Recording Stopped")
-        stopRecordingButton.isEnabled = false
-        recordButton.isEnabled = true
-        stopRecordingButton.isHidden = true
-        recordButton.isHidden = false
-        recordingLabel.text = "Tap to Record"
-        
+    func stopRecording() {
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
@@ -63,15 +50,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBOutlet weak var recordingLabel: UILabel!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        stopRecordingButton.isEnabled = false
-        stopRecordingButton.isHidden = true
-    }
-    
 
     @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var stopRecordingButton: UIButton!
+
     
     var audioRecorder: AVAudioRecorder!
     
@@ -93,6 +74,20 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             print("Recorded Audio URL: \(recordedAudioURL)")
             playSoundsVC.recordedAudioURL = recordedAudioURL }
     }
+    
+    @IBAction func buttonPress(_ sender: Any) {
+        
+        if(recordButton.imageView?.image == UIImage(named:"recordButton")){
+            recordButton.setImage(imageStop, for: [])
+            recordingLabel.text = "Tap to Stop Recording"
+            record()
+        } else {
+            recordButton.setImage(imagePlay, for: [])
+            recordingLabel.text = "Tap to Record"
+            stopRecording()
+        }
+    }
+
     
 }
 

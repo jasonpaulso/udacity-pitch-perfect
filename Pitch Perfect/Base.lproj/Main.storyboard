@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N9p-tY-GGx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2553a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N9p-tY-GGx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,25 +22,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y7k-aE-rAa">
-                                <rect key="frame" x="132" y="238" width="111" height="191"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y7k-aE-rAa">
+                                <rect key="frame" x="16" y="234" width="343" height="200"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqv-AZ-VJN">
-                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="100"/>
-                                        <state key="normal" image="recordButton"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                        <state key="normal" image="recordButton">
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ah8-JE-y9o"/>
+                                            <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2R-1h-cj6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evA-40-HTJ">
-                                        <rect key="frame" x="0.0" y="110" width="110.5" height="50"/>
-                                        <state key="normal" image="stopRecordingButton"/>
-                                        <connections>
-                                            <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yjk-Qx-SOd"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5P-Hz-Bwp">
-                                        <rect key="frame" x="0.0" y="170" width="110.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Record" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5P-Hz-Bwp">
+                                        <rect key="frame" x="0.0" y="100" width="343" height="100"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -51,7 +46,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="y7k-aE-rAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="boD-Hy-zY4"/>
                             <constraint firstItem="y7k-aE-rAa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eEb-EV-Mye"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y7k-aE-rAa" secondAttribute="trailing" id="le6-jL-jYS"/>
                             <constraint firstItem="y7k-aE-rAa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oJR-Xf-sQC"/>
                         </constraints>
                     </view>
@@ -59,7 +56,6 @@
                     <connections>
                         <outlet property="recordButton" destination="tqv-AZ-VJN" id="t0y-E6-wKx"/>
                         <outlet property="recordingLabel" destination="Q5P-Hz-Bwp" id="Sc3-HD-riG"/>
-                        <outlet property="stopRecordingButton" destination="evA-40-HTJ" id="dLy-eS-unt"/>
                         <segue destination="LPM-uA-3vH" kind="show" identifier="stopRecording" id="wZ6-MB-pfe"/>
                     </connections>
                 </viewController>

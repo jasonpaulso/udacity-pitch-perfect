@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6E2E726E64E92E7A4B7E50F9EFDBED6B624A17B5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6E2E726E64E92E7A4B7E50F9EFDBED6B624A17B5" : 9223372036854775807,
+    "26F059469EF74C9DABC787ACADC30CC00FCA37D4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "59A97A3D-CC0C-4F7D-9857-AFBDEC79578A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6E2E726E64E92E7A4B7E50F9EFDBED6B624A17B5" : "Pitch%20Perfect\/",
+    "26F059469EF74C9DABC787ACADC30CC00FCA37D4" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pitch Perfect",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pitch Perfect.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jasonpaulso\/udacity-language-quiz.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "26F059469EF74C9DABC787ACADC30CC00FCA37D4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jasonpaulso\/udacity-pitch-perfect.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E2E726E64E92E7A4B7E50F9EFDBED6B624A17B5"
+    }
+  ]
+}
